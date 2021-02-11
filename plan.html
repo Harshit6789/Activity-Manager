@@ -1,0 +1,92 @@
+<html>
+
+<head>
+    <title>Crud</title>
+    <link rel="stylesheet" href="css/style1.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body{
+        background-image:url('white.jpg');
+    }
+    </style>
+    
+</head>
+
+<body>
+    <div id="container">
+        <div class="header">
+            <h1 style="color: white;">CONTACT FORM</h1>
+        </div>
+        <input type="checkbox" id="sidebaricon">
+        <label for="sidebaricon" class="sidebartoggle">
+            <div class="spinner top"></div>
+            <div class="spinner middle"></div>
+            <div class="spinner bottom"></div>
+        </label>
+        <div id="sidebar">
+            <ul class="menu">
+                <li style="font-size: 15px;font-weight: bold;"><a href="home.html">Home</a></li>
+                <li style="font-size: 15px;font-weight: bold;"><a href="plan.html">Plan Your Day</a></li>
+                <li style="font-size: 15px;font-weight: bold;"><a href="All task.html">All Task</a></li>
+                <li style="font-size: 15px;font-weight: bold;"><a href="calender.html">Calender</a></li>
+            </ul>
+        </div>
+    </div>
+    </div>
+    <!-- Make a form here and paste the data -->
+    <h1 style="text-align: center;">CONTACT FORM</h1>
+    <div style="padding: 15px;">
+        <form action="#">
+            <div>
+                <label style="font-size:15px;font-weight: bold;">Username</label>
+                <input type="text" id="name" placeholder="Enter your name" required>
+                <span id="username" class="font-weight-bold"></span>
+            </div>
+            <div>
+                <label style="font-size:15px;font-weight: bold;">Date</label>
+                <input type="date" id="date" placeholder="Enter your Date">
+            </div>
+            <div>
+                <label for="status" style="font-size:15px;font-weight: bold;">Choose a Status:</label>
+                <select id="status" name="status">
+                    <option value="---">---</option>
+                    <option value="Start">Start</option>
+                    <option value="In Progess">In Progress</option>
+                    <option value="Complete">Complete</option>
+                </select>
+            </div>
+            <label for="priorty" style="font-size:15px;font-weight: bold;">Choose a Priorty:</label>
+            <select id="priorty" name="priorty">
+                <option value="---">---</option>
+                <option value="Low">Low</option>
+                <option value="Medium">Medium</option>
+                <option value="High">High</option>
+            </select>
+            <div class="form-action-button">
+                <button type="submit" id="submit" value="onsubmit" onclick="onFormSubmit()">Submit</button>
+                <button id="update" value="rowId" onclick="updateRow()">Update</button>
+            </div>
+        </form>
+        <!-- Make a list to show the data -->
+        <div id="table">
+            <table class="list" id="employeeList">
+                <thead>
+                    <tr>
+                        <th>Username</th>
+                        <th>Date</th>
+                        <th>Status</th>
+                        <th>Priorty</th>
+                        <th>Edit/Delete</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody1">
+                    <tr></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</body>
+<script src="js/javascript.js"></script>
+
+</html>

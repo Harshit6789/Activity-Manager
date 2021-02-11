@@ -1,0 +1,88 @@
+<html>
+
+<head>
+	<title>calender</title>
+	<link rel="stylesheet" href="css/monthly.css">
+	<link rel="stylesheet" href="css/style.css">
+	<style type="text/css">
+		body {
+			font-family: Calibri;
+			background-color: #f0f0f0;
+			background-image: url('white.jpg');
+
+		}
+
+		#mycalendar {
+			width: 100%;
+			margin: 2em auto 0 auto;
+			max-width: 80em;
+			border: 1px solid #666;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="container">
+		<div class="header">
+			<h1>CALENDER</h1>
+		</div>
+		<input type="checkbox" id="sidebaricon">
+		<label for="sidebaricon" class="sidebartoggle">
+			<div class="spinner top"></div>
+			<div class="spinner middle"></div>
+			<div class="spinner bottom"></div>
+		</label>
+		<div id="sidebar">
+			<ul class="menu">
+				<li style="font-size: 15px;font-weight: bold;"><a href="home.html">Home</a></li>
+				<li style="font-size: 15px;font-weight: bold;"><a href="plan.html">Plan Your Day</a></li>
+				<li style="font-size: 15px;font-weight: bold;"><a href="All task.html">All Task</a></li>
+				<li style="font-size: 15px;font-weight: bold;"><a href="calender.html">Calender</a></li>
+			</ul>
+		</div>
+	</div>
+	<br><br>
+	<br><br>
+	<div style="margin-left: 50px;">
+		<div class="monthly" id="mycalendar"></div>
+
+	</div>
+</body>
+
+<script type="text/javascript" src="js/jquery-3.5.1.min.js"></script>
+<script type="text/javascript" src="js/monthly.js"></script>
+<script type="text/javascript" src="js/calender.js"></script>
+
+<script>
+
+	var month = [];
+	var arr1 = JSON.parse(localStorage.getItem("User1")) || [];
+	var color = {
+		Low: "red",
+		Medium: "yellow",
+		High: "green"
+	}
+	arr1.forEach(function (el, index) {
+		month.push({
+			"id": "ab" + index,
+			"name": el.name,
+			"startdate": el.date,
+			"color": color[el.priorty]
+
+		});
+
+	});
+	var sampleEvents = {
+		monthly: month
+	}
+	$('#mycalendar').monthly({
+		mode: 'event',
+		dataType: 'json',
+		events: sampleEvents
+	});
+
+
+
+</script>
+
+</html>
